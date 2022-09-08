@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Từ điển Anh- Việt - Nhật </h1>
+<input style="width: 200px" id="inPut" type="text" value="" placeholder="nhập tiếng Anh or Nhật or Việt" >
+<button onclick="traCuu()">Tra cứu</button>
+<h3>Kết quả : </h3>
+<p id="kQua"></p>
+<script>
+    function traCuu () {
+        var str = document.getElementById("inPut").value;
+        b="";
+        arrViet = ['xin chào', 'cám ơn', 'tạm biệt']
+        arrAnh = ['hello', 'thanks you', 'goodbye']
+        arrNhat = ['ohaiyo', 'arigato', 'janeeeee']
+        arrTong=[].concat(arrViet,arrAnh,arrNhat);
+        console.log(arrTong)
+        for (x=0;x<arrTong.length;x++){
+        switch (str) {
+            case arrAnh[x]:
+                document.getElementById("kQua").innerHTML = "Tiếng Việt : " + arrViet[x] + "<br>" + "Tiếng Nhật : " + arrNhat[x];
+                    break;
+            case arrNhat[x]:
+                document.getElementById("kQua").innerHTML = "Tiếng Việt : " + arrViet[x] + "<br>" + "Tiếng Anh : " + arrAnh[x]
+                    break;
+            case arrViet[x]:
+                document.getElementById("kQua").innerHTML = "Tiếng Anh : " + arrAnh[x] + "<br>" + "Tiếng Nhật : " + arrNhat[x];
+                    break;
+            case arrTong[x]:
+                alert("sai dữ liệu, hãy nhập lại");
+                break;
+        }}}
+</script>
+</body>
+</html>
